@@ -1,4 +1,4 @@
-# 
+# Python Program to check the minimum requirements for a strong password. 
 
 def passwordchecker(s: str, n: int) :
     
