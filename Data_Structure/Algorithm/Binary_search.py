@@ -1,3 +1,12 @@
+
+# Binary Search has O(log n) time complexity 
+# log(n) example n=7 it can be reduced to 1 by dividing exactly half by 2 times therefore log(7) == 2
+
+""" 
+Binary search is a search algorithm that finds the position of a target value within a sorted array.
+It compares the target value to the middle element of the array and reduces the search space to half based on the comparison result
+"""
+
 # The below binary search algorithm search the key position either in left subarry or right subarray. Not in given array
 
 def Binary_search(arr,key):
