@@ -1,5 +1,6 @@
 '''
-selection sort : Insertion sort in-place sorting algorithm, it compares key element and replace it to its sorted position
+Insertion sort : Insertion sort in-place sorting algorithm, it compares key element and replace it to its sorted position by swapping its 
+previous.
 
 TimeComplexity
 
