@@ -11,10 +11,10 @@ class Circular_Signly_linked_list:
     def get_next_addr(self):
         return self.next_node_addr   
         
-node1=Signly_linked_list(10)
-node2=Signly_linked_list(20)
-node3=Signly_linked_list(30)
-node4=Signly_linked_list(40)
+node1=Circular_Signly_linked_list(10)
+node2=Circular_Signly_linked_list(20)
+node3=Circular_Signly_linked_list(30)
+node4=Circular_Signly_linked_list(40)
 
 node1.set_next_addr(node2)  
 node2.set_next_addr(node3) 
@@ -56,10 +56,10 @@ class Circular_Doubly_linked_list:
     def get_prev_addr(self):
         return self.prev_node_addr    
         
-node1=Doubly_linked_list(10)
-node2=Doubly_linked_list(20)
-node3=Doubly_linked_list(30)
-node4=Doubly_linked_list(40)
+node1=Circular_Doubly_linked_list(10)
+node2=Circular_Doubly_linked_list(20)
+node3=Circular_Doubly_linked_list(30)
+node4=Circular_Doubly_linked_list(40)
 
 node1.set_next_addr(node2)  
 node2.set_next_addr(node3) 
