@@ -3,6 +3,10 @@ Stack: Stack is temprorary memory that stores the data in the linear and first i
 stack works on the principle of FILO, LIFO
 Stack has only one end elements can be accessed only in one direction.
 
+once stack is initiated with specific size and memory is allocated accordingly, the size is fixed and cannot be changed in lifetime.
+
+if we need a stack with desired size we have to copy the elements from old stack amd place it into new stack
+
 ''' 
 
 
