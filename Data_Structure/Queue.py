@@ -5,6 +5,9 @@ Queue works on the principle of FIFO, LILO.
 the process of adding elements to queue is called as Enqueue operation.
 the process of removing elements from queue is called as Dequeue operation.
 
+once Queue is initiated with specific size and memory is allocated accordingly, the size is fixed and cannot be changed in lifetime.
+
+if we need to modify a  Queue with desired size we have to copy the elements from old Queue amd place it into new queue
 """
 
 class Queue:
