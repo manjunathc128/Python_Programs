@@ -16,3 +16,8 @@ def is_palindrome(input_string):
 input_string = input("Enter a string: ")
 result = is_palindrome(input_string)
 print(result)
+
+# using slicing 
+
+print(input_string == input_string[::-1])
+
