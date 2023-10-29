@@ -143,7 +143,56 @@ class LinkedList:
                 itr.next = node1
             count +=1
             itr=itr.next
-    
+            
+    def insertAfterValue(self, data_after, data_to_insert):   
+        if self.head is None:
+            raise Exception('LinkedList is Empty cannot insert data by reference')
+        
+        if self.head.data==data_after:
+            self.head.next = Node(data_to_insert,self.head.next)
+            return
+        
+        itr = self.head  
+        while itr:                                #me                        
+            if  itr.data == data_after :
+                node = Node(data_to_insert,itr.next)
+                itr.next = node 
+                break
+            itr=itr.next   
+            
+        itr = self.head                           
+        while itr:
+            if itr.data == data_after:
+                itr.next = Node(data_to_insert, itr.next)
+                break
+
+            itr = itr.next    
+            
+    def remove_by_value(self, data):  
+        if self.head is None:
+            raise Exception('LinkedList is Empty cannot insert data by reference')
+        
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+
+        itr = self.head
+        while itr.next:
+            if itr.next.data == data:
+                itr.next = itr.next.next
+                break
+            itr = itr.next
+        
+            
+        itr = self.head                #me
+        itrprev = self.head
+        while itr:
+            if  itr.data == data :
+                itrprev.next = itr.next
+                break
+            itrprev=itr
+            itr=itr.next
+            
             
 L1=LinkedList()            
 L1.insertBegining(7)        
@@ -165,4 +214,14 @@ L1.updateValue(4,1)
 L1.printLinkedList()
 
 L2.printLinkedList()
+
+L1.insertAfterValue(4,5)
+L1.insertAfterValue(6,0)
+L1.printLinkedList()
+
+L1.remove_by_value(0)
+L1.printLinkedList()
+
+
+
 
