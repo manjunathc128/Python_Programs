@@ -34,3 +34,55 @@ root.insert(0)
 root.insert(3)
 root.insert(4)
 root.showtree()
+
+# -----------------------------General Tree with TreeNode Class -----------------------
+class TreeNode:
+    def __init__(self,data):
+         self.data = data
+         self.childern=[]
+         self.parent=None
+    def addChild(self,child):
+        child.parent=self
+        self.childern.append(child)
+        
+    def get_level(self):
+        level=0
+        parent=self.parent
+        
+        while parent:
+            level+=1
+            parent=parent.parent
+        return level    
+            
+    def printTree(self):
+        
+        spaces=" " * self.get_level() * 2
+        prefix = "|--" if self.parent else ""
+        print(spaces + prefix + self.data)
+        if self.childern:
+            for child in self.childern :
+                child.printTree()
+            
+def build_product_tree():
+    root = TreeNode("Electronics")
+
+    laptop = TreeNode("Laptop")
+    laptop.addChild(TreeNode("Mac"))
+    laptop.addChild(TreeNode("Surface"))
+    laptop.addChild(TreeNode("Thinkpad"))
+    cellphone = TreeNode("Cell Phone")
+    cellphone.addChild(TreeNode("iPhone"))
+    cellphone.addChild(TreeNode("Google Pixel"))
+    cellphone.addChild(TreeNode("Vivo"))
+
+    tv = TreeNode("TV")
+    tv.addChild(TreeNode("Samsung"))
+    tv.addChild(TreeNode("LG"))
+
+    root.addChild(laptop)
+    root.addChild(cellphone)
+    root.addChild(tv)
+
+    root.printTree()        
+if __name__ == '__main__':
+    build_product_tree()
