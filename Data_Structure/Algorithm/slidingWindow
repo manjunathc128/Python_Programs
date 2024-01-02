@@ -1,0 +1,18 @@
+const getMaximumSumSubArrayOfSizeK = function  (arr, k){
+    let maxSum = 0 , windowSum = 0;
+    for(let i = 0; i <  k; i++){
+        
+        windowSum += arr[i]
+    }
+    end = k
+    while(end < arr.length){
+        windowSum += arr[end] - arr[end - k];
+        maxSum = Math.max(maxSum, windowSum)
+        end+=1
+    }
+    return maxSum   
+}
+
+console.log(getMaximumSumSubArrayOfSizeK( [1,9,-1,-2,7,3,-1,2] , 3) );   
+
+// tc o(n) sliding windown without pointers
