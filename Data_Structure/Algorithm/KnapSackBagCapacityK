@@ -20,19 +20,31 @@ print(knapsack(len(val), 4))
 
 // Dp approach memoization  t(c) O(nC)
 
-def knapsack(i, c):  #  wt, val 
-    if i == 0 or c <= 0 :
+def knapsack(i, c, cache):
+    if i == 0 or c == 0 :
         return 0
-    if wt[i-1] > c:
-        return knapsack(i-1, c)
+        
+    if cache[i][c] != 0:
+        return cache[i][c]
+        
+    if wt[i - 1] > c:
+        cache[i][c] = knapsack(i-1, c, cache)
+        return cache[i][c]
+        
+    ith_item_selected = val[i - 1] + knapsack(i-1, c - wt[i-1], cache)
     
-    ith_item_selected = val[i-1] + knapsack(i-1, c - wt[i-1])   #  wt, val 
-    
-    ith_item_notselected = knapsack(i-1,c)  #  wt, val 
+    ith_item_notselected = knapsack(i-1,c, cache)
 
-    return max( ith_item_selected,  ith_item_notselected)  
+    cache[i][c] =  max( ith_item_selected,  ith_item_notselected)  
+    return cache[i][c]
     
-print(knapsack(len(val), 4))
+wt = [1,4,3]
+val = [150, 300, 200]
+c = 4
+cache = [[0]*(c+1)]*(len(val) + 1)    
+print(knapsack(len(val), c, cache))
+
+print(cache)
 
 
 
